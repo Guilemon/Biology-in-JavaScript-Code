@@ -17,11 +17,8 @@ function createNextGeneration(){
     a1a2 = 2*p*q;
     a2a2 = q*q;
 }
-createNextGeneration();
-console.log("generation 1:",a1a1, a1a2, a2a2);
 
-createNextGeneration();
-console.log("generation 2:",a1a1, a1a2, a2a2);
-
-createNextGeneration();
-console.log("generation 3:",a1a1, a1a2, a2a2);
+for (var iterator = 0; iterator<5;iterator++){
+    createNextGeneration();
+    console.log("generation "+(iterator + 1)+":",a1a1, a1a2, a2a2);
+}

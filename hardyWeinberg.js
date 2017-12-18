@@ -9,7 +9,7 @@ var a1a2 = 1 - (a1a1 + a2a2);
 var p = a1a1 + (a1a2 / 2);
 var q = 1 - p;
 
-console.log("generation 0:",a1a1,a1a2,a2a2);
+console.log("generation 0:",roundNumbers(a1a1,3),roundNumbers(a1a2,3),roundNumbers(a2a2,3));
 
 //Calculating the next generation
 function createNextGeneration(){
@@ -18,7 +18,11 @@ function createNextGeneration(){
     a2a2 = q*q;
 }
 
+function roundNumbers(value,decimal){
+    var shifter = Math.pow(10,decimal)
+    return Math.round(value*shifter)/shifter;
+}
 for (var iterator = 0; iterator<5;iterator++){
     createNextGeneration();
-    console.log("generation "+(iterator + 1)+":",a1a1, a1a2, a2a2);
+    console.log("generation "+(iterator + 1)+":",roundNumbers(a1a1,3), roundNumbers(a1a2,3), roundNumbers(a2a2,3));
 }
